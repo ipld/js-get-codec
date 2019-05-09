@@ -1,6 +1,6 @@
 {
   "name": "@ipld/get-codec",
-  "version": "1.0.0",
+  "version": "0.0.0-dev",
   "description": "",
   "main": "index-nodejs.js",
   "browser": "index-browser.js",
