@@ -5,7 +5,7 @@
   "main": "index-nodejs.js",
   "browser": "index-browser.js",
   "scripts": {
-    "test": "nyc --check-coverage --lines 100 --statements 100 --branches 100 --functions 100 aegir test -t node && aegir test -t browser",
+    "test": "nyc --check-coverage --lines 100 --statements 100 --branches 100 --functions 100 aegir test",
     "lint": "aegir lint"
   },
   "keywords": [],

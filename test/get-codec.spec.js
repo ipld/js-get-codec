@@ -1,5 +1,5 @@
+/* globals it */
 const getCodec = require('../')
-const { it } = require('mocha')
 const assert = require('assert')
 const tsame = require('tsame')
 const ci = require('@ipld/codec-interface')
