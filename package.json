@@ -6,7 +6,7 @@
   "browser": "index-browser.js",
   "scripts": {
     "test": "nyc --check-coverage --lines 100 --statements 100 --branches 100 --functions 100 aegir test",
-    "lint": "aegir lint"
+    "pretest": "aegir lint"
   },
   "keywords": [],
   "author": "Mikeal Rogers <mikeal.rogers@gmail.com> (https://www.mikealrogers.com/)",

@@ -1,3 +1,4 @@
+'use strict'
 /* globals it */
 const getCodec = require('../')
 const assert = require('assert')

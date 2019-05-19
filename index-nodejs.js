@@ -1,3 +1,4 @@
+'use strict'
 const ci = require('@ipld/codec-interface')
 const util = require('multicodec/src/util')
 const table = require('multicodec/src/name-table')
