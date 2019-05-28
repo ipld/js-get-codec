@@ -26,7 +26,7 @@ cache.raw = {
   codec: 'raw'
 }
 
-const getCodec = async codec => {
+const getCodec = codec => {
   if (cache[codec]) return cache[codec]
   throw new Error(`Unknown codec ${codec}`)
 }

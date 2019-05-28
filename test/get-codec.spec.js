@@ -9,37 +9,37 @@ const same = (...args) => assert.ok(tsame(...args))
 const test = it
 
 test('dag-json', async () => {
-  let codec = await getCodec('dag-json')
+  let codec = getCodec('dag-json')
   assert(codec.encode)
   assert(codec.decode)
-  let buffer = await codec.encode({ hello: 'world' })
-  let obj = await codec.decode(buffer)
+  let buffer = codec.encode({ hello: 'world' })
+  let obj = codec.decode(buffer)
   same(obj, { hello: 'world' })
 })
 
 test('dag-cbor', async () => {
-  let codec = await getCodec('dag-cbor')
+  let codec = getCodec('dag-cbor')
   assert(codec.encode)
   assert(codec.decode)
-  let buffer = await codec.encode({ hello: 'world' })
-  let obj = await codec.decode(buffer)
+  let buffer = codec.encode({ hello: 'world' })
+  let obj = codec.decode(buffer)
   same(obj, { hello: 'world' })
 })
 
 test('setCodec', async () => {
-  let codec = await getCodec('dag-json')
+  let codec = getCodec('dag-json')
   codec = ci.create(codec.encode, codec.decode, 'dag-nope')
   getCodec.setCodec(codec)
-  codec = await getCodec('dag-nope')
+  codec = getCodec('dag-nope')
   assert(codec.encode)
   assert(codec.decode)
-  let buffer = await codec.encode({ hello: 'world' })
-  let obj = await codec.decode(buffer)
+  let buffer = codec.encode({ hello: 'world' })
+  let obj = codec.decode(buffer)
   same(obj, { hello: 'world' })
 })
 
 test('raw', async () => {
-  let codec = await getCodec('raw')
+  let codec = getCodec('raw')
   let b = Buffer.from(Math.random().toString())
   same(codec.decode(b), b)
   same(codec.encode(b), b)
