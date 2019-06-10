@@ -13,7 +13,7 @@
   "license": "(Apache-2.0 AND MIT)",
   "dependencies": {
     "@ipld/codec-interface": "^1.0.5",
-    "@ipld/dag-json": "^2.0.2",
+    "@ipld/dag-json": "^2.0.4",
     "ipld-bitcoin": "~0.3.0",
     "ipld-dag-cbor": "~0.15.0",
     "ipld-dag-pb": "~0.17.4",
