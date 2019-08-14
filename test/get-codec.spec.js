@@ -9,21 +9,21 @@ const same = (...args) => assert.ok(tsame(...args))
 const test = it
 
 test('dag-json', done => {
-  let codec = getCodec('dag-json')
+  const codec = getCodec('dag-json')
   assert(codec.encode)
   assert(codec.decode)
-  let buffer = codec.encode({ hello: 'world' })
-  let obj = codec.decode(buffer)
+  const buffer = codec.encode({ hello: 'world' })
+  const obj = codec.decode(buffer)
   same(obj, { hello: 'world' })
   done()
 })
 
 test('dag-cbor', done => {
-  let codec = getCodec('dag-cbor')
+  const codec = getCodec('dag-cbor')
   assert(codec.encode)
   assert(codec.decode)
-  let buffer = codec.encode({ hello: 'world' })
-  let obj = codec.decode(buffer)
+  const buffer = codec.encode({ hello: 'world' })
+  const obj = codec.decode(buffer)
   same(obj, { hello: 'world' })
   done()
 })
@@ -35,22 +35,22 @@ test('setCodec', done => {
   codec = getCodec('dag-nope')
   assert(codec.encode)
   assert(codec.decode)
-  let buffer = codec.encode({ hello: 'world' })
-  let obj = codec.decode(buffer)
+  const buffer = codec.encode({ hello: 'world' })
+  const obj = codec.decode(buffer)
   same(obj, { hello: 'world' })
   done()
 })
 
 test('raw', done => {
-  let codec = getCodec('raw')
-  let b = Buffer.from(Math.random().toString())
+  const codec = getCodec('raw')
+  const b = Buffer.from(Math.random().toString())
   same(codec.decode(b), b)
   same(codec.encode(b), b)
   done()
 })
 
 test('error', done => {
-  let str = Math.random().toString()
+  const str = Math.random().toString()
   try {
     getCodec(str)
     assert.ok(false)
