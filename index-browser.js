@@ -5,15 +5,11 @@ const table = require('multicodec/src/name-table')
 
 const basename = num => table[util.numberToBuffer(num).toString('hex')]
 
-let globals
-if (typeof window === 'undefined') globals = this
-else globals = window
-
-if (!globals.codecCache) {
-  globals.codecCache = {}
+if (!window.codecCache) {
+  window.codecCache = {}
 }
 
-const cache = globals.codecCache
+const cache = window.codecCache
 
 const _convert = c => ci.create(c.util.serialize, c.util.deserialize, basename(c.codec))
 
