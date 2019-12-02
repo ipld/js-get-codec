@@ -1,12 +1,14 @@
 {
   "name": "@ipld/get-codec",
   "version": "0.0.0-dev",
-  "description": "",
+  "description": "Get / load IPLD codecs, used by @ipld/block",
   "main": "index-nodejs.js",
   "browser": "index-browser.js",
   "scripts": {
-    "test": "hundreds aegir test -t node browser",
-    "pretest": "aegir lint"
+    "lint": "standard",
+    "test:node": "hundreds mocha tests/test-*.js",
+    "test:browser": "polendina --cleanup tests/test-*.js",
+    "test": "npm run lint && npm run test:node && npm run test:browser"
   },
   "keywords": [],
   "author": "Mikeal Rogers <mikeal.rogers@gmail.com> (https://www.mikealrogers.com/)",
@@ -16,15 +18,24 @@
     "@ipld/dag-json": "^2.0.4",
     "ipld-bitcoin": "~0.3.0",
     "ipld-dag-cbor": "~0.15.0",
-    "ipld-dag-pb": "~0.17.4",
+    "ipld-dag-pb": "~0.18.1",
     "ipld-ethereum": "^4.0.0",
     "ipld-git": "~0.5.0",
-    "ipld-zcash": "~0.3.0",
+    "ipld-zcash": "~0.4.0",
     "multicodec": "~0.5.3"
   },
   "devDependencies": {
-    "aegir": "^20.0.0",
-    "hundreds": "0.0.1",
+    "hundreds": "0.0.2",
+    "mocha": "~6.2.2",
+    "polendina": "~0.1.0",
+    "standard": "~14.3.1",
     "tsame": "^2.0.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ipld/js-get-codec.git"
+  },
+  "nyc": {
+    "exclude": "tests/test-*.js"
   }
 }
