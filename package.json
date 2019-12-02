@@ -1,7 +1,7 @@
 {
   "name": "@ipld/get-codec",
   "version": "0.0.0-dev",
-  "description": "",
+  "description": "Get / load IPLD codecs, used by @ipld/block",
   "main": "index-nodejs.js",
   "browser": "index-browser.js",
   "scripts": {
@@ -16,16 +16,20 @@
     "@ipld/dag-json": "^2.0.4",
     "ipld-bitcoin": "~0.3.0",
     "ipld-dag-cbor": "~0.15.0",
-    "ipld-dag-pb": "~0.17.4",
+    "ipld-dag-pb": "~0.18.1",
     "ipld-ethereum": "^4.0.0",
     "ipld-git": "~0.5.0",
-    "ipld-zcash": "~0.3.0",
+    "ipld-zcash": "~0.4.0",
     "multicodec": "~0.5.3"
   },
   "devDependencies": {
-    "aegir": "^19.0.3",
+    "aegir": "^20.4.1",
     "nyc": "^14.1.1",
-    "standard": "^12.0.1",
+    "standard": "^14.3.1",
     "tsame": "^2.0.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ipld/js-get-codec.git"
   }
 }

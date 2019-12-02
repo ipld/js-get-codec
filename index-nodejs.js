@@ -17,7 +17,7 @@ const implementations = [
   'ipld-dag-pb',
   'ipld-bitcoin',
   'ipld-zcash',
-  'ipld-git' ]
+  'ipld-git']
   .map(str => require(str))
   .concat(Object.values(require('ipld-ethereum')))
   .map(c => ci.create(c.util.serialize, c.util.deserialize, basename(c.codec)))
