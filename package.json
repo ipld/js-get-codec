@@ -5,8 +5,10 @@
   "main": "index-nodejs.js",
   "browser": "index-browser.js",
   "scripts": {
-    "test": "hundreds aegir test -t node browser",
-    "pretest": "aegir lint"
+    "lint": "standard",
+    "test:node": "hundreds mocha tests/test-*.js",
+    "test:browser": "polendina --cleanup tests/test-*.js",
+    "test": "npm run lint && npm run test:node && npm run test:browser"
   },
   "keywords": [],
   "author": "Mikeal Rogers <mikeal.rogers@gmail.com> (https://www.mikealrogers.com/)",
@@ -23,12 +25,17 @@
     "multicodec": "~0.5.3"
   },
   "devDependencies": {
-    "aegir": "^20.4.1",
     "hundreds": "0.0.2",
+    "mocha": "~6.2.2",
+    "polendina": "~0.1.0",
+    "standard": "~14.3.1",
     "tsame": "^2.0.1"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ipld/js-get-codec.git"
+  },
+  "nyc": {
+    "exclude": "tests/test-*.js"
   }
 }
