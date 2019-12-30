@@ -1,9 +1,6 @@
 'use strict'
 const ci = require('@ipld/codec-interface')
-const util = require('multicodec/src/util')
-const table = require('multicodec/src/name-table')
-
-const basename = num => table[util.numberToBuffer(num).toString('hex')]
+const multicodec = require('multicodec')
 
 const raw = {
   encode: x => x,
@@ -20,7 +17,7 @@ const implementations = [
   'ipld-git']
   .map(str => require(str))
   .concat(Object.values(require('ipld-ethereum')))
-  .map(c => ci.create(c.util.serialize, c.util.deserialize, basename(c.codec)))
+  .map(c => ci.create(c.util.serialize, c.util.deserialize, multicodec.print[c.codec]))
   .concat([
     require('@ipld/dag-json'),
     raw

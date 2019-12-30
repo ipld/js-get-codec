@@ -1,9 +1,6 @@
 'use strict'
 const ci = require('@ipld/codec-interface')
-const util = require('multicodec/src/util')
-const table = require('multicodec/src/name-table')
-
-const basename = num => table[util.numberToBuffer(num).toString('hex')]
+const multicodec = require('multicodec')
 
 if (!window.codecCache) {
   window.codecCache = {}
@@ -11,7 +8,7 @@ if (!window.codecCache) {
 
 const cache = window.codecCache
 
-const _convert = c => ci.create(c.util.serialize, c.util.deserialize, basename(c.codec))
+const _convert = c => ci.create(c.util.serialize, c.util.deserialize, multicodec.print[c.codec])
 
 cache['dag-json'] = require('@ipld/dag-json')
 cache['dag-cbor'] = _convert(require('ipld-dag-cbor'))
