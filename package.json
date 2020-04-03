@@ -16,6 +16,7 @@
   "dependencies": {
     "@ipld/codec-interface": "^1.0.5",
     "@ipld/dag-json": "^2.0.4",
+    "buffer": "^5.5.0",
     "ipld-bitcoin": "~0.3.0",
     "ipld-dag-cbor": "~0.15.0",
     "ipld-dag-pb": "~0.18.1",
