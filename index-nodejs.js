@@ -16,7 +16,7 @@ const implementations = [
   'ipld-zcash',
   'ipld-git']
   .map(str => require(str))
-  .concat(Object.values(require('ipld-ethereum')))
+  // .concat(Object.values(require('ipld-ethereum')))
   .map(c => ci.create(c.util.serialize, c.util.deserialize, multicodec.print[c.codec]))
   .concat([
     require('@ipld/dag-json'),
