@@ -2,12 +2,13 @@
 const { Buffer } = require('buffer')
 const ci = require('@ipld/codec-interface')
 const multicodec = require('multicodec')
+const globalThis = require('globalthis')()
 
-if (!window.codecCache) {
-  window.codecCache = {}
+if (!globalThis.codecCache) {
+  globalThis.codecCache = {}
 }
 
-const cache = window.codecCache
+const cache = globalThis.codecCache
 
 const _convert = c => ci.create(c.util.serialize, c.util.deserialize, multicodec.print[c.codec])
 const toBuffer = b => Buffer.isBuffer(b) ? b : Buffer.from(b)
