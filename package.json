@@ -15,20 +15,20 @@
   "license": "(Apache-2.0 AND MIT)",
   "dependencies": {
     "@ipld/codec-interface": "^1.0.5",
-    "@ipld/dag-json": "^2.0.4",
-    "buffer": "^5.5.0",
-    "ipld-bitcoin": "~0.3.0",
-    "ipld-dag-cbor": "~0.15.0",
-    "ipld-dag-pb": "~0.18.1",
-    "ipld-git": "~0.5.0",
-    "ipld-zcash": "~0.4.0",
-    "multicodec": "^1.0.0"
+    "@ipld/dag-json": "^4.0.0",
+    "buffer": "^6.0.3",
+    "ipld-bitcoin": "^0.4.1",
+    "ipld-dag-cbor": "^0.17.1",
+    "ipld-dag-pb": "^0.21.1",
+    "ipld-git": "^0.6.4",
+    "ipld-zcash": "^0.5.1",
+    "multicodec": "^3.0.1"
   },
   "devDependencies": {
-    "hundreds": "0.0.2",
-    "mocha": "~6.2.2",
-    "polendina": "~0.1.0",
-    "standard": "~14.3.1",
+    "hundreds": "0.0.9",
+    "mocha": "^8.3.0",
+    "polendina": "^1.1.0",
+    "standard": "^16.0.3",
     "tsame": "^2.0.1"
   },
   "repository": {

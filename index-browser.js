@@ -9,7 +9,7 @@ if (!window.codecCache) {
 
 const cache = window.codecCache
 
-const _convert = c => ci.create(c.util.serialize, c.util.deserialize, multicodec.print[c.codec])
+const _convert = c => ci.create(c.util.serialize, c.util.deserialize, multicodec.getNameFromCode(c.codec))
 const toBuffer = b => Buffer.isBuffer(b) ? b : Buffer.from(b)
 
 cache['dag-json'] = require('@ipld/dag-json')

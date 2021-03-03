@@ -17,13 +17,20 @@ const implementations = [
   'ipld-git']
   .map(str => require(str))
   // .concat(Object.values(require('ipld-ethereum')))
-  .map(c => ci.create(c.util.serialize, c.util.deserialize, multicodec.print[c.codec]))
+  .map(c => ci.create(c.util.serialize, c.util.deserialize, multicodec.getNameFromCode(c.codec)))
   .concat([
     require('@ipld/dag-json'),
     raw
   ])
   .reduce((obj, codec) => {
-    obj[codec.codec] = codec
+    let codecName = codec.codec
+
+    // @ipld/dag-json has no codec.codec property so get the name from codec.code
+    if (!codecName && codec.code) {
+      codecName = multicodec.getNameFromCode(codec.code)
+    }
+
+    obj[codecName] = codec
     return obj
   }, {})
 
